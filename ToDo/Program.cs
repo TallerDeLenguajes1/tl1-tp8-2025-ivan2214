@@ -92,10 +92,11 @@ namespace ToDo
                     case 1:
                         Console.WriteLine("Mover tareas pendientes a realizadas");
 
-                        foreach (Tarea tarea in tareasPendientes)
+                        for (int i = tareasPendientes.Count - 1; i >= 0; i--)
                         {
+                            Tarea tarea = tareasPendientes[i];
                             tareasRealizadas.Add(tarea);
-                            tareasPendientes.Remove(tarea);
+                            tareasPendientes.RemoveAt(i);
                         }
 
                         break;
